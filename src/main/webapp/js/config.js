@@ -3,7 +3,7 @@ require.config({
     paths: {
         'bankai': '../bankai',
         'jquery': 'libs/jquery/jquery',
-        'jquery.ui': 'libs/jquery/jquery-ui',
+        'jquery-ui': 'libs/jquery/jquery-ui',
         'jquery.tokeninput': 'libs/jquery/jquery-tokeninput',
         'less': 'libs/less/less',
         'moment': 'libs/moment/moment',
@@ -43,7 +43,7 @@ require.config({
         },
         'jquery-ui': {
             deps: ['jquery'],
-            exports: 'jquery'
+            exports : 'jquery-ui'
         },
         'jquery-bootstrap': {
             deps: ['jquery'],

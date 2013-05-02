@@ -7,17 +7,17 @@ require([
     '../'+Bankai.appName+'/js/router',
     'i18n!../'+Bankai.appName+'/js/nls/messages'
     ], function($, Backbone, Mustache, Marionette, App, Router, i18n) {
-
+		
+		var redirect = function() {
+        	var loc = location.href;
+        	location.href = loc.substring(0, loc.indexOf(contextPath) + contextPath.length + 1);
+		};
+		
         $.ajaxSetup({
             statusCode : {
-                401 : function() {
-                    // Redirect the to the login page.
-                    Bankai.router.navigate("login", true);
-                },
-                403 : function() {
-                    // 403 -- Access denied
-                    Bankai.router.navigate("login", true);
-                }
+                401 : redirect,
+                403 : redirect,
+                500 : redirect
             }
         });
 
@@ -25,19 +25,20 @@ require([
 
         Backbone.Marionette.Renderer.render = function(template, data) {
             if (data) {
-                data['_mls'] = function() { 
-                    return function(val) { 
-                        if (this[val]) {
-                            if (this[val].pt) {
-                                return this[val].pt;
-                            }
-                            if (this[val]["pt-PT"]) {
-                                return this[val]["pt-PT"];
-                            }
-                        }
-                        return "";
-                    };
-                };
+//                data['_mls'] = function() { 
+//                    return function(val) { 
+//                        if (this[val]) {
+//                            if (this[val].pt) {
+//                                return this[val].pt;
+//                            }
+//                            if (this[val]["pt-PT"]) {
+//                                return this[val]["pt-PT"];
+//                            }
+//                        }
+//                        return "";
+//                    };
+//                };
+            	BennuPortal.addMls(data);
                 data['_abv'] = function() {
                     return function(val) {
                         if (this[val]) {
@@ -72,7 +73,7 @@ require([
         }
 
         App.addRegions({
-            page: "#content"
+            page: "#xpto"
         });
 
         App.addInitializer(function() {
