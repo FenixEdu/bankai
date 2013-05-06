@@ -17,7 +17,6 @@ require([
             statusCode : {
                 401 : redirect,
                 403 : redirect,
-                500 : redirect
             }
         });
 
@@ -73,7 +72,7 @@ require([
         }
 
         App.addRegions({
-            page: "#xpto"
+            page: "#bankai-container"
         });
 
         App.addInitializer(function() {
