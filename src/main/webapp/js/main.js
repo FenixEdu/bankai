@@ -37,7 +37,9 @@ require([
 //                        return "";
 //                    };
 //                };
-            	BennuPortal.addMls(data);
+                if(typeof BennuPortal !== "undefined") {
+            	   BennuPortal.addMls(data);
+                }
                 data['_abv'] = function() {
                     return function(val) {
                         if (this[val]) {

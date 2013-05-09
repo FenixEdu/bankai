@@ -30,7 +30,7 @@ require.config({
         //Set the config for the i18n
         //module ID
         i18n: {
-            locale: BennuPortal.locale.tag.toLowerCase()
+            locale: (typeof BennuPortal !== "undefined")?BennuPortal.locale.tag.toLowerCase():"en-en"
         }
     },
 
