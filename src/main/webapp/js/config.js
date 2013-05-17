@@ -5,6 +5,7 @@ require.config({
         'jquery': 'libs/jquery/jquery',
         'jquery-ui': 'libs/jquery/jquery-ui',
         'jquery.tokeninput': 'libs/jquery/jquery-tokeninput',
+        'jquery-datatables': 'libs/jquery/jquery-datatables',
         'less': 'libs/less/less',
         'moment': 'libs/moment/moment',
         'moment-pt': 'libs/moment/lang/pt',
@@ -48,6 +49,10 @@ require.config({
         'jquery-bootstrap': {
             deps: ['jquery'],
             exports: 'jquery'
+        },
+        'jquery-datatables': {
+        	deps: ['jquery'],
+        	exports:'jquery-datatables'
         },
         'backbone': {
             deps: ['underscore', 'jquery'],
