@@ -6,6 +6,7 @@ require.config({
         'jquery-ui': 'libs/jquery/jquery-ui',
         'jquery.tokeninput': 'libs/jquery/jquery-tokeninput',
         'jquery-datatables': 'libs/jquery/jquery-datatables',
+        'jquery-scroll': 'libs/jquery/jquery-scrollTo',
         'less': 'libs/less/less',
         'moment': 'libs/moment/moment',
         'moment-pt': 'libs/moment/lang/pt',
@@ -54,6 +55,9 @@ require.config({
         	deps: ['jquery'],
         	exports:'jquery-datatables'
         },
+		'jquery-scroll': {
+			deps: ['jquery']
+		},
         'backbone': {
             deps: ['underscore', 'jquery'],
             exports: 'Backbone'
