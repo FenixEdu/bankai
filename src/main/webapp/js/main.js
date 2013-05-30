@@ -5,18 +5,35 @@ require([
     'marionette',
     'app',
     '../'+Bankai.appName+'/js/router',
-    'i18n!../'+Bankai.appName+'/js/nls/messages'
-    ], function($, Backbone, Mustache, Marionette, App, Router, i18n) {
+    'i18n!../'+Bankai.appName+'/js/nls/messages',
+    'i18n!nls/messages'
+    ], function($, Backbone, Mustache, Marionette, App, Router, i18n, i18nBankai) {
 		
 		var redirect = function() {
         	var loc = location.href;
         	location.href = loc.substring(0, loc.indexOf(contextPath) + contextPath.length + 1);
+		};
+
+		var supportform = function(data) {
+		    var model = JSON.parse(data.responseText);
+		    $('#support-modal').remove();
+		    require(['../js/models/SupportForm', '../js/views/SupportForm'], function(SupportFormModel, SupportFormView) {
+		        var supportFormModel = new SupportFormModel(model);
+		        var x = new SupportFormView({model: supportFormModel});
+		        x.render();
+		        $("body").append(x.el);
+		        $('#support-modal').on('shown', function()  {
+		            $('#support-modal textarea').focus();
+		        });
+		        $('#support-modal').modal();
+		    });
 		};
 		
         $.ajaxSetup({
             statusCode : {
                 401 : redirect,
                 403 : redirect,
+                500 : supportform,
             }
         });
 
@@ -55,6 +72,9 @@ require([
                 };
                 data['_i18n'] = function() {
                     return function(val) {
+                        if (i18nBankai[val]) {
+                            return i18nBankai[val];
+                        }
                         if (i18n[val]) {
                             return i18n[val];
                         }
