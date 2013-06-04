@@ -19,6 +19,7 @@ require.config({
         'jquery-bootstrap': 'libs/bootstrap/bootstrap',
         'text': 'libs/require/text',
         'i18n': 'libs/require/i18n',
+        'appLibs': '../'+Bankai.appName+'/js/libs',
         'collections': '../'+Bankai.appName+'/js/collections',
         'models': '../'+Bankai.appName+'/js/models',
         'views': '../'+Bankai.appName+'/js/views',
