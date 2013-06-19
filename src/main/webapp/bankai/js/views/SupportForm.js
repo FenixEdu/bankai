@@ -1,7 +1,7 @@
-define([ 'jquery', 'backbone', 'marionette', 'app', 'text!../../../templates/SupportForm.html' ],
+define([ 'jquery', 'marionette', 'text!bankaiTemplates/SupportForm.html' ],
 
-function($, Backbone, Marionette, App, tpl) {
-    return Backbone.Marionette.ItemView.extend({
+function($, Marionette, App, tpl) {
+    return Marionette.ItemView.extend({
         template : tpl,
 
         events : {
