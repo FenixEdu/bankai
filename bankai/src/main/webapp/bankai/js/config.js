@@ -19,6 +19,7 @@ require.config({
 		'text' : '../../bankai/js/libs/require/text',
 		'i18n' : '../../bankai/js/libs/require/i18n',
 		'less' : '../../bankai/js/libs/less/less',
+		'modalRegion' : '../../bankai/js/views/Modal',
 		'supportFormModel': "../../bankai/js/models/SupportForm",
         'supportFormView': "../../bankai/js/views/SupportForm",
         'bankaiTemplates': "../../bankai/templates",

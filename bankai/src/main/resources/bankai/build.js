@@ -19,6 +19,7 @@
 		'less' :'empty:',
         'text': 'libs/require/text',
         'i18n': 'libs/require/i18n',
+        'modalRegion': 'views/Modal',
         'supportFormModel': 'models/SupportForm',
         'supportFormView': 'views/SupportForm',
         'bankaiTemplates' : '../templates',

@@ -6,8 +6,8 @@
  *  Pedro Santos
  *  Sérgio Silva
  **********************/
-define([ 'backbone', 'marionette', 'app', 'router', 'supportFormModel', 'supportFormView', 'i18n!nls/messages',
-		'i18n!bankai/nls/messages' ], function(Backbone, Marionette, App, Router, SupportFormModel, SupportFormView,
+define([ 'backbone', 'marionette', 'app', 'router', 'modalRegion', 'supportFormModel', 'supportFormView', 'i18n!nls/messages',
+		'i18n!bankai/nls/messages' ], function(Backbone, Marionette, App, Router, ModalRegion, SupportFormModel, SupportFormView,
 		i18n, bankaiI18N) {
 
 	var redirect = function() {
@@ -16,18 +16,11 @@ define([ 'backbone', 'marionette', 'app', 'router', 'supportFormModel', 'support
 	};
 
 	var supportform = function(data) {
-		var model = JSON.parse(data.responseText);
-		$('#support-modal').remove();
-		var supportFormModel = new SupportFormModel(model);
-		var x = new SupportFormView({
-			model : supportFormModel
-		});
-		x.render();
-		$("body").append(x.el);
-		$('#support-modal').on('shown', function() {
-			$('#support-modal textarea').focus();
-		});
-		$('#support-modal').modal();
+        var model = new SupportFormModel(JSON.parse(data.responseText));
+        App.modal.show(new SupportFormView({
+            model : model
+        }));
+        $('.modal').modal('show');
 	};
 
 	$.ajaxSetup({
@@ -94,7 +87,8 @@ define([ 'backbone', 'marionette', 'app', 'router', 'supportFormModel', 'support
 	};
 
 	App.addRegions({
-		page : "#bankai-container"
+		page : "#bankai-container",
+        modal: ModalRegion,
 	});
 
 	App.addInitializer(function() {
