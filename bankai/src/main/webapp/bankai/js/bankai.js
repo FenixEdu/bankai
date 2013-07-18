@@ -31,8 +31,6 @@ define([ 'backbone', 'marionette', 'app', 'router', 'modalRegion', 'supportFormM
 		}
 	});
 
-	Backbone.emulateJSON = true;
-
 	var templateCaches = {};
 	Backbone.Marionette.Renderer.render = function(template, data) {
 		if (data != undefined) {
