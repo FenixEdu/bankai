@@ -80,7 +80,7 @@ In this example the bankai app is called `bankai-example`
     }
 ```
 
-2. `index.html` - Here it is where the application will initialize. All your client side DOM elements will be included inside `<div id="bankai-container"></div>`. 
+2. `index.html` - Here it is where the application will initialize. All your client side DOM elements will be included inside `<div id="portal-container"></div>`. 
 
 ```<script data-main="../bankai/js/config"...``` will initialize Bankai application and therefore your application will start at this point.
 

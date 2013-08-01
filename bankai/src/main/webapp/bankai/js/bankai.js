@@ -85,8 +85,8 @@ define([ 'backbone', 'marionette', 'app', 'router', 'modalRegion', 'supportFormM
 	};
 
 	App.addRegions({
-		page : "#bankai-container",
-        modal: ModalRegion,
+		page : "#portal-container",
+	        modal: ModalRegion,
 	});
 
 	App.addInitializer(function() {
