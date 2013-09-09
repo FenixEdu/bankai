@@ -91,7 +91,6 @@ define([ 'backbone', 'marionette', 'app', 'router', 'modalRegion', 'supportFormM
 
 	App.addInitializer(function() {
 		App.Router = new Router();
-		App.Router.initialize();
 		Backbone.history.start();
 	});
 
