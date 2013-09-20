@@ -16,6 +16,7 @@ require.config({
 		'bootstrap.notify' : '../../bankai/js/libs/bootstrap/bootstrap-notify',
 		'backbone' : '../../bankai/js/libs/backbone/backbone',
 		'marionette' : '../../bankai/js/libs/backbone/backbone.marionette',
+        'paginator' : '../../bankai/js/libs/backbone/backbone.paginator',
 		'text' : '../../bankai/js/libs/require/text',
 		'i18n' : '../../bankai/js/libs/require/i18n',
 		'less' : '../../bankai/js/libs/less/less',
@@ -68,8 +69,10 @@ require.config({
 			deps : [ 'jquery', 'underscore', 'backbone' ],
 			exports : 'Backbone.Marionette'
 		},
-
-
+		paginator : {
+            deps : [ 'jquery', 'underscore', 'backbone' ],
+            exports : 'Backbone.Paginator'
+		}
 	},
 
 	deps : [ 'bankai' ]

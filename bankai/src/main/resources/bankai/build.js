@@ -15,6 +15,7 @@
 		'mustache' :'empty:',
 		'bootstrap.notify' :'empty:',
 		'backbone' :'empty:',
+		'paginator' : 'empty:',
 		'marionette' :'empty:',
 		'less' :'empty:',
         'text': 'libs/require/text',
