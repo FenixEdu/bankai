@@ -12,7 +12,7 @@ define([ 'backbone', 'marionette', 'app', 'router', 'modalRegion', 'supportFormM
 
 	var redirect = function() {
 		var loc = location.href;
-		location.href = loc.substring(0, loc.indexOf(contextPath) + contextPath.length + 1);
+		location.href= loc.split("/")[0] + contextPath
 	};
 
 	var supportform = function(data) {
