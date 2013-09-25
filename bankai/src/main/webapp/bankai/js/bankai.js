@@ -11,8 +11,7 @@ define([ 'backbone', 'marionette', 'app', 'router', 'modalRegion', 'supportFormM
 		i18n, bankaiI18N) {
 
 	var redirect = function() {
-		var loc = location.href;
-		location.href= loc.split("/")[0] + contextPath
+		location.href= location.origin + contextPath
 	};
 
 	var supportform = function(data) {
