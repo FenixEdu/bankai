@@ -25,7 +25,7 @@
 	},
 
 	
-	locale:["pt-pt", "en-gb"],
+	locale:"pt-pt",
 	
 	skipModuleInsertion:true,
 	findNestedDependencies:true,
@@ -43,10 +43,10 @@
 	    ],
 	dir:"${r.js.dir}",
 	optimize:"uglify2",
-//	uglify2: {
-//		output: { beautify:true},
-//		compress : false,
-//		mangle:false
-//	},
+	uglify2: {
+		output: {beautify:true},
+		compress : true,
+		mangle:false
+	},
 	
 })
