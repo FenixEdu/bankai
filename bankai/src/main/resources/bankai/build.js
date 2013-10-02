@@ -28,7 +28,7 @@
         'router': 'empty:'
 	},
 	
-	locale:"pt-pt",
+	locale: ["pt-pt", "en-gb"],
 	skipModuleInsertion:true,
 	findNestedDependencies:false,
 	skipDirOptimize: false,

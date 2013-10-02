@@ -23,8 +23,9 @@
         'i18n': '../../bankai/js/libs/require/i18n',
         'templates' : '../templates',
 	},
+
 	
-	locale:"pt-pt",
+	locale:["pt-pt", "en-gb"],
 	
 	skipModuleInsertion:true,
 	findNestedDependencies:true,

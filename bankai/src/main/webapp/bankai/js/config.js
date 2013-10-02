@@ -2,6 +2,8 @@ require.config({
 
 	baseUrl : "./js",
 	paths : {
+//		'bennuportal' : '../../bennu-portal/portal',
+		'language' : '../../bankai/js/language',
 		'bankai' : '../../bankai/js/bankai',
 		'jquery' : '../../bankai/js/libs/jquery/jquery',
 		'jquery.ui' : '../../bankai/js/libs/jquery/jquery-ui',
@@ -31,14 +33,16 @@ require.config({
 		'templates' : '../templates',
 		'layouts' : 'layouts',
 	},
+	
+//	locale : "pt-pt",
 
-	config : {
-		//        Set the config for the i18n
-		//        module ID
-		i18n : {
-			locale : (typeof BennuPortal !== "undefined") ? BennuPortal.locale.tag.toLowerCase() : "pt-pt"
-		}
-	},
+//	config : {
+//		//        Set the config for the i18n
+//		//        module ID
+//		i18n : {
+//			locale : "en-gb"
+//		}
+//	},
 
 	shim : {
 		moment : {
@@ -72,7 +76,12 @@ require.config({
 		paginator : {
             deps : [ 'jquery', 'underscore', 'backbone' ],
             exports : 'Backbone.Paginator'
-		}
+		},
+		
+//		bennuportal: {
+//			deps : ['jquery', 'mustache'],
+//			exports : 'BennuPortal'
+//		}
 	},
 
 	deps : [ 'bankai' ]

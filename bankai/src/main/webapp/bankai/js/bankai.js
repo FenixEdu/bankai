@@ -6,8 +6,8 @@
  *  Pedro Santos
  *  Sérgio Silva
  **********************/
-define([ 'backbone', 'marionette', 'app', 'router', 'modalRegion', 'supportFormModel', 'supportFormView', 'i18n!nls/messages',
-		'i18n!bankai/nls/messages' ], function(Backbone, Marionette, App, Router, ModalRegion, SupportFormModel, SupportFormView,
+define([ 'language', 'backbone', 'marionette', 'app', 'router', 'modalRegion', 'supportFormModel', 'supportFormView', 'i18n!nls/messages',
+		'i18n!bankai/nls/messages' ], function(Language, Backbone, Marionette, App, Router, ModalRegion, SupportFormModel, SupportFormView,
 		i18n, bankaiI18N) {
 
 	var redirect = function() {
@@ -29,7 +29,8 @@ define([ 'backbone', 'marionette', 'app', 'router', 'modalRegion', 'supportFormM
 			500 : supportform,
 		}
 	});
-
+	
+	
 	var templateCaches = {};
 	Backbone.Marionette.Renderer.render = function(template, data) {
 		if (data != undefined) {
