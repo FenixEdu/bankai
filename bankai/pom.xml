@@ -16,6 +16,9 @@
 	<name>Bankai</name>
 
 	<properties>
+	
+		<bankai.skip.js.optimization>false</bankai.skip.js.optimization>
+		
 		<!-- this is the source dir relative to r.js.tmp.dir (used in build.js) -->
 		<r.js.app.dir>${project.artifactId}</r.js.app.dir>
 		
@@ -87,7 +90,7 @@
 						false
 					</filterConfig>
 					<skip>
-						false
+						${bankai.skip.js.optimization}
 					</skip>
 				</configuration>
 			</plugin>
@@ -121,6 +124,23 @@
 			</plugin>
 		</plugins>
 	</build>
+	<profiles>
+		<profile>
+			<id>raw</id>
+			<properties>
+				<bankai.skip.js.optimization>true</bankai.skip.js.optimization>
+			</properties>
+			<build>
+				<resources>
+					<resource> 
+						<directory>src/main/webapp</directory>
+						<targetPath>${project.build.outputDirectory}/META-INF/resources</targetPath>
+						<filtering>false</filtering>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+	</profiles>
 
 	<repositories>
         <repository>

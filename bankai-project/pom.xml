@@ -186,7 +186,29 @@
 			</plugin>
 		</plugins>
 	</build>
-
+	
+	<profiles>
+			<profile>
+				<id>raw</id>
+				<build>
+					<resources>
+						<resource>
+							<directory>src/main/resources/${project.artifactId}</directory>
+							<targetPath>${project.build.outputDirectory}</targetPath>
+							<filtering>false</filtering>
+							<includes>
+								<include>apps.json</include>
+							</includes>
+						</resource>
+						<resource>
+							<directory>src/main/webapp</directory>
+							<targetPath>${project.build.outputDirectory}/META-INF/resources</targetPath>
+							<filtering>false</filtering>
+						</resource>
+					</resources>
+				</build>
+			</profile>
+		</profiles>
 
 	<dependencies>
 		<dependency>
