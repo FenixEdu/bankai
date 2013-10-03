@@ -6,9 +6,9 @@
  *  Pedro Santos
  *  Sérgio Silva
  **********************/
-define([ 'backbone', 'marionette', 'app', 'router', 'modalRegion', 'supportFormModel', 'supportFormView', 'i18n!nls/messages',
+define([ 'backbone', 'marionette', 'app', 'router', 'modalRegion', 'supportFormModel', 'supportFormView',
 		'i18n!bankai/nls/messages' ], function(Backbone, Marionette, App, Router, ModalRegion, SupportFormModel, SupportFormView,
-		i18n, bankaiI18N) {
+		bankaiI18N) {
 
 	var redirect = function() {
 		location.href= location.origin + contextPath
@@ -31,58 +31,58 @@ define([ 'backbone', 'marionette', 'app', 'router', 'modalRegion', 'supportFormM
 	});
 	
 	
-	var templateCaches = {};
-	Backbone.Marionette.Renderer.render = function(template, data) {
-		if (data != undefined) {
-			if (typeof BennuPortal !== "undefined") {
-				BennuPortal.addMls(data);
-			}
-			data["_abv"] = function() {
-				return function(val) {
-					if (this[val]) {
-						var maxLength = 15;
-						var text = this[val];
-						if (text && text.length > maxLength) {
-							return this[val].substring(0, maxLength) + "...";
+	require(['i18n!nls/messages'], function(i18n) {
+		var templateCaches = {};
+		Backbone.Marionette.Renderer.render = function(template, data) {
+			if (data != undefined) {
+				if (typeof BennuPortal !== "undefined") {
+					BennuPortal.addMls(data);
+				}
+				data["_abv"] = function() {
+					return function(val) {
+						if (this[val]) {
+							var maxLength = 15;
+							var text = this[val];
+							if (text && text.length > maxLength) {
+								return this[val].substring(0, maxLength) + "...";
+							}
+							return text;
 						}
-						return text;
-					}
-					return "";
+						return "";
+					};
 				};
-			};
-
-			data["_i18n"] = function() {
-				return function(val) {
-					if (i18n[val]) {
-						return i18n[val];
-					}
-					if (bankaiI18N[val]) {
-						return bankaiI18N[val];
-					}
-					return "!!_i18n_" + val + "_i18n_!!";
+				data["_i18n"] = function() {
+					return function(val) {
+						if (i18n[val]) {
+							return i18n[val];
+						}
+						if (bankaiI18N[val]) {
+							return bankaiI18N[val];
+						}
+						return "!!_i18n_" + val + "_i18n_!!";
+					};
 				};
-			};
-
-			data["_noti18n"] = function() {
-				return function(val) {
-					if (i18n[data[val]]) {
-						return i18n[data[val]];
-					}
-					return "";
+				data["_noti18n"] = function() {
+					return function(val) {
+						if (i18n[data[val]]) {
+							return i18n[data[val]];
+						}
+						return "";
+					};
 				};
-			};
-		}
-		var rawTemplate = template;
-		if (template.indexOf("#") == 0) {
-			var cachedTemplate = templateCaches[template];
-			if (!cachedTemplate) {
-				cachedTemplate = $(template).html();
-				templateCaches[template] = cachedTemplate;
 			}
-			rawTemplate = cachedTemplate;
-		}
-		return Mustache.to_html(rawTemplate, data);
-	};
+			var rawTemplate = template;
+			if (template.indexOf("#") == 0) {
+				var cachedTemplate = templateCaches[template];
+				if (!cachedTemplate) {
+					cachedTemplate = $(template).html();
+					templateCaches[template] = cachedTemplate;
+				}
+				rawTemplate = cachedTemplate;
+			}
+			return Mustache.to_html(rawTemplate, data);
+		};
+	});
 
 	App.addRegions({
 		page : "#portal-container",
