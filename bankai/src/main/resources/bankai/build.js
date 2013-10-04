@@ -43,10 +43,10 @@
 	optimize:"uglify2",
 	uglify2 : {
 		output : {
-			beautify : true
+			beautify : false 
 		},
 		compress : true,
-		mangle : false
+		mangle : true 
 	},
 	
 })

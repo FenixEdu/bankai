@@ -34,19 +34,25 @@
 	modules : [
 	           {
 	        	   name : "router",
-	        	   include:["i18n!nls/messages"],
 	        	   exclude : [	
 								'text',
-								'i18n'
+								'i18n',
+								'i18n!nls/messages',
 							 ]
-	           }
+	           },
+
+			   {
+					name : "nls/messages",
+	        	   include:["i18n!nls/messages"],
+				   exclude: ['i18n']
+			   }
 	    ],
 	dir:"${r.js.dir}",
 	optimize:"uglify2",
 	uglify2: {
-		output: {beautify:true},
-		compress : true,
-		mangle:false
-	},
+		output: {beautify:false},
+	compress : true,
+		mangle:true
+	}
 	
 })

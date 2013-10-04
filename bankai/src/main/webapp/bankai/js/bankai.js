@@ -7,8 +7,8 @@
  *  Sérgio Silva
  **********************/
 define([ 'backbone', 'marionette', 'app', 'router', 'modalRegion', 'supportFormModel', 'supportFormView',
-		'i18n!bankai/nls/messages' ], function(Backbone, Marionette, App, Router, ModalRegion, SupportFormModel, SupportFormView,
-		bankaiI18N) {
+		'i18n!nls/messages', 'i18n!bankai/nls/messages' ], function(Backbone, Marionette, App, Router, ModalRegion, SupportFormModel, SupportFormView,
+		i18n, bankaiI18N) {
 
 	var redirect = function() {
 		location.href= location.origin + contextPath
@@ -31,7 +31,6 @@ define([ 'backbone', 'marionette', 'app', 'router', 'modalRegion', 'supportFormM
 	});
 	
 	
-	require(['i18n!nls/messages'], function(i18n) {
 		var templateCaches = {};
 		Backbone.Marionette.Renderer.render = function(template, data) {
 			if (data != undefined) {
@@ -82,7 +81,6 @@ define([ 'backbone', 'marionette', 'app', 'router', 'modalRegion', 'supportFormM
 			}
 			return Mustache.to_html(rawTemplate, data);
 		};
-	});
 
 	App.addRegions({
 		page : "#portal-container",
