@@ -52,6 +52,7 @@ define([ 'backbone', 'marionette', 'app', 'router', 'modalRegion', 'supportFormM
 				};
 				data["_i18n"] = function() {
 					return function(val) {
+					    val = Mustache.to_html(val, this);
 						if (i18n[val]) {
 							return i18n[val];
 						}
