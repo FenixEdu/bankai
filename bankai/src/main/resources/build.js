@@ -8,6 +8,7 @@
 		'jquery.tokeninput' :'empty:',
 		'jquery.datatables' :'empty:',
 		'jquery.scroll' :'empty:',
+        'jquery.form' :'empty:',
 		'jquery.bootstrap' :'empty:',
 		'moment' :'empty:',
 		'moment.pt' :'empty:',
