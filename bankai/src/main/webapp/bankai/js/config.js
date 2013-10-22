@@ -9,6 +9,8 @@ require.config({
         'jquery.datatables' : '../../bankai/js/libs/jquery/jquery-datatables',
         'jquery.scroll' : '../../bankai/js/libs/jquery/jquery-scrollTo',
         'jquery.form' : '../../bankai/js/libs/jquery/jquery.form',
+        'jquery.tagcloud' : '../../bankai/js/libs/jquery/jquery.tagcloud',
+        'jquery.tagsinput' : '../../bankai/js/libs/jquery/jquery.tagsinput',
         'jquery.bootstrap' : '../../bankai/js/libs/bootstrap/bootstrap',
         'moment' : '../../bankai/js/libs/moment/moment',
         'moment.pt' : '../../bankai/js/libs/moment/lang/pt',
@@ -39,29 +41,18 @@ require.config({
         moment : {
             exports : "moment"
         },
+
         underscore : {
             exports : "_"
         },
-
-        jquery : {
-            exports : '$'
-        },
-
-        'jquery.ui' : {
-            deps : [ 'jquery' ],
-            exports : '$'
-        },
-        'jquery.datatables' : {
-            deps : [ 'jquery' ],
-            exports : '$'
-        },
-        'jquery.form' : {
-            deps : [ 'jquery' ],
-            exports : '$'
-        },
+        'jquery.ui' : [ 'jquery' ],
+        'jquery.datatables' : [ 'jquery' ],
+        'jquery.form' : [ 'jquery' ],
         "jquery.tokeninput" : [ "jquery" ],
         "jquery.bootstrap" : [ "jquery" ],
         "jquery.scroll" : [ "jquery" ],
+        'jquery.tagcloud' : [ "jquery" ],
+        'jquery.tagsinput' : [ "jquery" ],
 
         backbone : {
             deps : [ 'jquery', 'underscore' ],
