@@ -1,15 +1,11 @@
 define([ 'jquery', 'marionette', 'text!bankaiTemplates/SupportForm.html' ],
 
-function($, Marionette, App, tpl) {
+function($, Marionette, tpl) {
     return Marionette.ItemView.extend({
         template : tpl,
 
         events : {
             'click #support-submit' : 'supportSubmit',
-        },
-
-        onRender : function() {
-//            $('textarea[name="comment"]').focus();
         },
         
         supportSubmit : function(e) {

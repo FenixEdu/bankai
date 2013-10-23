@@ -1,4 +1,4 @@
-define([ 'backbone', 'marionette' ], function(Backbone, Marionette) {
+define([ 'jquery', 'backbone', 'marionette' ], function($, Backbone, Marionette) {
     return Backbone.Marionette.Region.extend({
         el : "#modal",
 
