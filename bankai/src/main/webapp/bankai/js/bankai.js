@@ -26,7 +26,8 @@ define([ 'backbone', 'marionette', 'app', 'router', 'modalRegion', 'supportFormM
 		statusCode : {
 			401 : redirect,
 			403 : redirect,
-			500 : supportform,
+			// disabled until sotis returns other than 500 for handled server errors
+//			500 : supportform,
 		}
 	});
 	
