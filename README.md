@@ -108,7 +108,7 @@ When using this parent pom, your bankai app will dependend automatically on bank
     <parent>
         <groupId>pt.ist</groupId>
         <artifactId>bankai-project</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.0.0-M1</version>
     </parent>
 
 To enabled javascript minification, add this to your pom

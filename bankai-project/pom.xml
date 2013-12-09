@@ -5,13 +5,13 @@
 
 	<groupId>pt.ist</groupId>
 	<artifactId>bankai-project</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-M1</version>
 	<name>Bankai Project</name>
 	<packaging>pom</packaging>
 
 	<properties>
 
-		<version.pt.ist.bankai>0.0.1-SNAPSHOT</version.pt.ist.bankai>
+		<version.pt.ist.bankai>1.0.0-M1</version.pt.ist.bankai>
 
 		<bankai.skip.js.optimization>true</bankai.skip.js.optimization>
 

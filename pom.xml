@@ -5,7 +5,7 @@
 
 	<groupId>pt.ist</groupId>	
 	<artifactId>bankai-aggregator</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-M1</version>
     <name>Bankai Aggregating Pom</name>
     <packaging>pom</packaging>
 
