@@ -3,9 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>pt.ist</groupId>
+	<parent>
+		<groupId>pt.ist</groupId>
+		<artifactId>bankai-aggregator</artifactId>
+		<version>1.0.0-M1</version>
+	</parent>
+
 	<artifactId>bankai-project</artifactId>
-	<version>1.0.0-M1</version>
 	<name>Bankai Project</name>
 	<packaging>pom</packaging>
 
@@ -186,29 +190,29 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+
 	<profiles>
-			<profile>
-				<id>raw</id>
-				<build>
-					<resources>
-						<resource>
-							<directory>src/main/resources/${project.artifactId}</directory>
-							<targetPath>${project.build.outputDirectory}</targetPath>
-							<filtering>false</filtering>
-							<includes>
-								<include>apps.json</include>
-							</includes>
-						</resource>
-						<resource>
-							<directory>src/main/webapp</directory>
-							<targetPath>${project.build.outputDirectory}/META-INF/resources</targetPath>
-							<filtering>false</filtering>
-						</resource>
-					</resources>
-				</build>
-			</profile>
-		</profiles>
+		<profile>
+			<id>raw</id>
+			<build>
+				<resources>
+					<resource>
+						<directory>src/main/resources/${project.artifactId}</directory>
+						<targetPath>${project.build.outputDirectory}</targetPath>
+						<filtering>false</filtering>
+						<includes>
+							<include>apps.json</include>
+						</includes>
+					</resource>
+					<resource>
+						<directory>src/main/webapp</directory>
+						<targetPath>${project.build.outputDirectory}/META-INF/resources</targetPath>
+						<filtering>false</filtering>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+	</profiles>
 
 	<dependencies>
 		<dependency>
@@ -217,26 +221,4 @@
 			<version>${version.pt.ist.bankai}</version>
 		</dependency>
 	</dependencies>
-
-	<repositories>
-		<repository>
-			<id>fenix-ashes-maven-repository</id>
-			<url>https://fenix-ashes.ist.utl.pt/nexus/content/groups/fenix-ashes-maven-repository</url>
-		</repository>
-	</repositories>
-
-	<pluginRepositories>
-		<pluginRepository>
-			<id>fenix-ashes-maven-repository</id>
-			<url>https://fenix-ashes.ist.utl.pt/nexus/content/groups/fenix-ashes-maven-repository</url>
-		</pluginRepository>
-	</pluginRepositories>
-
-	<distributionManagement>
-		<repository>
-			<id>fenix-ashes-releases</id>
-			<url>https://fenix-ashes.ist.utl.pt/nexus/content/repositories/fenix-ashes-releases</url>
-		</repository>
-	</distributionManagement>
-
 </project>
