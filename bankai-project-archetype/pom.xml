@@ -3,9 +3,9 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>pt.ist</groupId>
+		<groupId>org.fenixedu</groupId>
 		<artifactId>bankai-aggregator</artifactId>
-		<version>1.0.0-M1</version>
+		<version>1.0.0-M2</version>
 	</parent>
 
 	<artifactId>bankai-project-archetype</artifactId>

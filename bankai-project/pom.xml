@@ -4,9 +4,9 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>pt.ist</groupId>
+		<groupId>org.fenixedu</groupId>
 		<artifactId>bankai-aggregator</artifactId>
-		<version>1.0.0-M1</version>
+		<version>1.0.0-M2</version>
 	</parent>
 
 	<artifactId>bankai-project</artifactId>
@@ -15,7 +15,7 @@
 
 	<properties>
 
-		<version.pt.ist.bankai>1.0.0-M1</version.pt.ist.bankai>
+		<version.org.fenixedu.bankai>1.0.0-M2</version.org.fenixedu.bankai>
 
 		<bankai.skip.js.optimization>true</bankai.skip.js.optimization>
 
@@ -117,9 +117,9 @@
 						<configuration>
 							<artifactItems>
 								<artifactItem>
-									<groupId>pt.ist</groupId>
+									<groupId>org.fenixedu</groupId>
 									<artifactId>bankai</artifactId>
-									<version>${version.pt.ist.bankai}</version>
+									<version>${version.org.fenixedu.bankai}</version>
 									<overWrite>true</overWrite>
 									<outputDirectory>${bankai.dir}</outputDirectory>
 									<includes>META-INF/resources/bankai/**/*.*,build.js</includes>
@@ -216,9 +216,9 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>pt.ist</groupId>
+			<groupId>org.fenixedu</groupId>
 			<artifactId>bankai</artifactId>
-			<version>${version.pt.ist.bankai}</version>
+			<version>${version.org.fenixedu.bankai}</version>
 		</dependency>
 	</dependencies>
 </project>

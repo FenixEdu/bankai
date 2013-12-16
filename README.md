@@ -28,7 +28,7 @@ It will also include require.js plugins `text` and `i18n`.
 
 This is a maven archetype that scaffolds a bankai project structure and automatically generates a HelloWorld view.
 
-    mvn archetype:generate -DarchetypeGroupId=pt.ist -DarchetypeArtifactId=bankai-project-archetype
+    mvn archetype:generate -DarchetypeGroupId=org.fenixedu -DarchetypeArtifactId=bankai-project-archetype
     
 ###Bankai Module Structure
 
@@ -65,12 +65,12 @@ In this example the bankai app is called `bankai-example`
         "apps": [
                     {
                         "title": {
-                            "en-GB": "pt.ist.bankai-example",
-                            "pt-PT": "pt.ist.bankai-example"
+                            "en-GB": "bankai-example",
+                            "pt-PT": "bankai-example"
                         },
                         "description": {
-                            "en-GB": "pt.ist.bankai-example",
-                            "pt-PT": "pt.ist.bankai-example"
+                            "en-GB": "bankai-example",
+                            "pt-PT": "bankai-example"
                         },
                         "accessExpression": "anyone",
                         "path": "bankai-example/",
@@ -106,9 +106,9 @@ When using this parent pom, your bankai app will dependend automatically on bank
 ####Use as parent pom (in a bankai app module)
 
     <parent>
-        <groupId>pt.ist</groupId>
+        <groupId>org.fenixedu</groupId>
         <artifactId>bankai-project</artifactId>
-        <version>1.0.0-M1</version>
+        <version>1.0.0-M2</version>
     </parent>
 
 To enabled javascript minification, add this to your pom
