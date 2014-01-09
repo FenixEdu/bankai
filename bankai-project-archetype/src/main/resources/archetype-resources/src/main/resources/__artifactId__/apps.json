@@ -1,0 +1,17 @@
+{
+    "apps": [
+        {
+            "title": {
+                "en-GB": "${groupId}.${artifactId}",
+                "pt-PT": "${groupId}.${artifactId}"
+            },
+            "description": {
+                "en-GB": "${groupId}.${artifactId}",
+                "pt-PT": "${groupId}.${artifactId}"
+            },
+            "accessExpression": "anyone",
+            "path": "${artifactId}/",
+            "functionalities": []
+        }
+    ]
+}
