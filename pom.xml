@@ -19,6 +19,7 @@
         <connection>scm:git:git@github.com:fenixedu/bankai.git</connection>
         <developerConnection>scm:git:git@github.com:fenixedu/bankai.git</developerConnection>
         <url>http://fenixedu.github.io/bankai</url>
+        <tag>HEAD</tag>
     </scm>
 
     <repositories>
