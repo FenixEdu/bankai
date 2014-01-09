@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.fenixedu</groupId>
 		<artifactId>bankai-aggregator</artifactId>
-		<version>1.0.0-M2</version>
+		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>bankai-project</artifactId>
@@ -15,7 +15,7 @@
 
 	<properties>
 
-		<version.org.fenixedu.bankai>1.0.0-M2</version.org.fenixedu.bankai>
+		<version.org.fenixedu.bankai>1.0.0-SNAPSHOT</version.org.fenixedu.bankai>
 
 		<bankai.skip.js.optimization>true</bankai.skip.js.optimization>
 
